@@ -1,0 +1,128 @@
+﻿.con{
+    display: flex;
+}
+.informBoxd {
+    height: auto;
+    overflow: hidden;
+    margin-right: 0;
+    flex: 1;
+    padding: 0 10px;
+    margin-top: 20px;
+}
+
+
+.dynamicb {
+    width: 100%;
+    background: #0b6cb8;
+    border-bottom: none;
+    height: 44px;
+    line-height: 44px;
+}
+.dynamicb h2 {
+    color: #fff;
+    border-bottom: none;
+    text-indent: 10px;
+    font-size: 16px;
+    font-weight: normal;
+    float: left;
+    padding: 0 5px;
+}
+.infor_lista {
+    height: auto;
+    max-height: 54vh;
+    padding: 0 6px;
+    overflow: auto;
+    border: 1px solid #eee;
+    margin-top: 12px;
+}
+.dynamic_list {
+    width: 100%;
+}
+.dynamic_list li {
+    line-height: 31px;
+    background: url(../images/xdd.png) no-repeat 3px 13px;
+    text-indent: 15px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #5c5c5c;
+    width: 100%;
+    text-indent: 12px;
+    cursor: pointer;
+    display: flex;
+}
+.dynamic_list li:hover {
+    background: url(../images/xdd_h.png) no-repeat 3px 13px;
+}
+
+.dynamic_list li span {
+    width: 53px;
+    float: right;
+    margin-right: 0;
+    color: #c3c3c3;
+}
+.dynamic_list li:hover em,.dynamic_list li:hover span {
+    color: #0b6cb8;
+}
+.dynamic_list li em {
+    font-style: normal;
+    display: block;
+    float: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    flex-grow: 1;width: 100px;
+
+}
+#piao_xq{width:100%;height:100%;position:fixed;top:0px;left:0px;background:rgba(0,0,0,0.8);z-index:10000;display:none}
+.piao_xq{position:relative;width:80%;height:80%;position:fixed;left:50%;top:50%;z-index:1100;background:#fff;border-radius:20px}
+.piao_xq>div:nth-child(1){width:100%;margin-top:6%}
+.piao_xq h4{width:85%;float:left;line-height:30px}
+
+
+#close{position:absolute;right:24px;top:24px;width:40px;height:40px;background:rgba(0,0,0,0);background-image:url('../images/closee.png');background-size:40px 40px}
+
+.piao_xq h3 {
+    width: 100%;
+    text-align: center;
+    line-height: 28px;
+    font-size: 24px;
+    color: #000000;
+    font-weight: normal;
+    margin-top: 46px;
+}
+.piao_xq span {
+    display: block;
+    width: 100;
+    text-align: center;
+    font-size: 14px;
+    color: #999999;
+    margin: 34px 0 10px 0;
+}
+.piao_xq p{
+    font-size: 14px;
+    line-height: 21px;
+}
+.main_conDiv {
+    text-indent: 2em;
+    font-size: 14px;
+    line-height: 30px;
+    color: #666666;
+    margin: 44px auto 0;
+    overflow: auto;
+    height: 66%;
+    padding:0 26px;
+}
+.main_conDiv p{
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    cursor: move;
+    background-color: #fff;
+}
+
+
+

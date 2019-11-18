@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>青海师范大学物电学院-创业展示</title>
+    <link href="css/css.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <!-- <script src="js/js.js"></script> -->
+    <link href="css/toPage.css" rel="stylesheet" />
+    <link href="css/Entrepreneurship.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="login">
+        <div id="admin" class="login">
+            <button class="close"></button>
+            <div>您未被授权，请联系管理员&nbsp;:010-57524077</div>
+            <div class="user" style="margin-top:0;">
+                <input class="admin" type="text" autocomplete="off" value="" placeholder="请输入账号" />
+            </div>
+            <div class="password">
+                <input class="admin_pass" type="password" autocomplete="off" value="" placeholder="请输入密码" />
+            </div>
+            <div class="login_button">
+                <button id="admin_but">登录</button>
+            </div>
+        </div>
+        <div id="log" class="login">
+            <button class="close"></button>
+            <div class="user">
+                <input class="username" type="text" autocomplete="off" value="" placeholder="请输入用户名" />
+            </div>
+            <div class="password">
+                <input class="password_log" type="password" autocomplete="off" value="" placeholder="请输入密码" />
+            </div>
+            <div class="zhuce">
+                <a id="registe" href="javascript:;">注册</a><label id="forget_pass">忘记密码</label>
+            </div>
+            <div class="login_button">
+                <button id="login_but" type="button">登录</button>
+            </div>
+        </div>
+        <div id="zhuce" class="zhuce_user">
+            <button class="close"></button>
+            <div id="visited" class="teach_visited">
+                <div class="xuehao">
+                    <p>用&nbsp;&nbsp;户&nbsp;&nbsp;名</p>
+                    <input class="sjh" type="text" autocomplete="off" placeholder="请输入用户名" value="" name="phone" />
+                    <b></b>
+                </div>
+                <div class="xuehao">
+                    <p>密<span>码</span></p>
+                    <input id="ipu" type="password" autocomplete="off" placeholder="请输入密码" value="" name="password" />
+                    <b></b>
+                </div>
+                <div class="xuehao">
+                    <p style="letter-spacing:2.2px;">确认密码</p>
+                    <input id="ipu1" type="password" autocomplete="off" placeholder="请再次输入密码" value="" />
+                    <b></b>
+                </div>
+                <div class="xuehao sex">
+                    <p></p>
+                    <label><input name="teach" type="radio" class="tui-checkbox" value="" checked />老师</label>
+                    <label><input name="teach" type="radio" class="tui-checkbox" value="" />学生</label>
+                    <b></b>
+                </div>
+                <div class="xuehao form-group">
+                    <p></p>
+                    <div class="field">
+                        <input type="text" class="input 
+                        "  id="input1" name="code" placeholder="填写下方的验证码" data-validate="required:请填写下方的验证码"/>
+                        <h4 type="button" id="checkCode" class="code" style="width:100px" value="createCode()"></h4>
+                        <span href="#" onClick="createCode()">看不清楚</span>
+                    </div>
+                    <b></b>
+                </div>
+                <script>
+                    
+                </script>
+                <div class="login_button" style="height:70px;">
+                    <button id="but">注册</button>
+                </div>
+                <div class="xuehao">
+                    <p></p>
+                    <span id="zhuce_dl">已有账号？去登录</span>
+                </div>
+            </div>
+        </div>
+        <div id="pass_change" class="pass_change">
+            <button class="close"></button>
+            <h3>重置密码</h3>
+            <div>
+                <div class="xuehao">
+                    <p>手&nbsp;&nbsp;机&nbsp;&nbsp;号</p>
+                    <input class="c_sjh" type="text" autocomplete="off" placeholder="请输入手机号" value="" />
+                    <b></b>
+                </div>
+                <div class="xuehao">
+                    <p>密<span>码</span></p>
+                    <input id="c_ipu" type="password" autocomplete="off" placeholder="请输入密码" value="" />
+                    <b></b>
+                </div>
+                <div class="xuehao">
+                    <p style="letter-spacing:2.2px;">确认密码</p>
+                    <input id="c_ipu1" type="password" autocomplete="off" placeholder="请再次输入密码" value="" />
+                    <b></b>
+                </div>
+                <div class="login_button" style="height:80px;">
+                    <button id="but_tj">提交</button>
+                </div>
+                <div class="xuehao">
+                    <p></p>
+                    <span id="forget_dl">记起了密码？去登录</span>
+                </div>
+                <div class="xuehao">
+                    <p></p>
+                    <span id="forget_zc">无账号？去注册</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="logo">
+        <div class="logo1">
+            <img src="images/logo.png"/>
+            <div>
+                <a id="login_btn">登录</a>   
+                <p href="">|</p> 
+                <a id="pass_btn">注册</a>
+                <a href="http://www.qhnu.edu.cn/" target="_blank" title="">学校首页</a>
+                <p href="">|</p>
+                <a href="https://wlx.qhnu.edu.cn/" target="_blank" title="">学院首页</a>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">新能源资讯</a></li>
+            <li><a href="Basic_course.html">基础课程</a></li>
+            <li><a href="Engineer.html">工程参考资料</a></li>
+            <li><a href="Creative.html">创新创意视频</a></li>
+            <li class="hover"><a href="Entrepreneurship.html">创业展示</a></li>
+            <li><a id="htguanli" href="javascript:;">课程管理</a></li>
+        </ul>
+    </nav>
+    <!-- Swiper -->
+    <div class="con">
+        <div id="swiper">
+            <div class="swiper-slide hover">
+                <a href="product.html"><img src="青海大学资料/产品展示/电源产品/1.jpg" /><p>电源产品展示</p></a>
+            </div>
+            <div class="swiper-slide">
+                <a><img src="青海大学资料/产品展示/储能产品/1.jpg" /><p>储能产品展示</p></a>
+            </div>
+            <div class="swiper-slide">
+                <a><img src="青海大学资料/产品展示/微电网产品/1.jpg" /><p>微电网产品展示</p></a>
+            </div>
+        </div>
+    </div>
+    <footer>青海师范大学物电学院</footer>
+    <script src="js/jquery.js"></script>
+    <script src="js/js.js"></script>
+    <script>
+        function tab(id){return document.getElementById(id)}
+        var swiper_html='';
+        $.ajax({
+            url: 'http://192.168.1.167:325/api/Cour/start',
+            type: 'get',
+            dataType: 'json',
+            success: function (data) {
+                $.each(data, function (index, value) {
+                    $.each(value, function (index, value) {
+                        swiper_html+='<div class="swiper-slide"><a href="product.html?data='+encodeURI(value.id)+'"><img src="'+value.url+ '\/' +'1.jpg" /><p>'+value.name+'</p></a></div>'
+                    })
+                })
+                tab('swiper').innerHTML=swiper_html;
+            }
+        })
+        //课程管理页面跳转
+        tab('htguanli').onclick=function(){
+            if(localStorage.getItem('user_name')==null&&localStorage.getItem('user_pass_word')==null){
+                alert('请先登录');
+                login_btn()
+            }else{
+                window.open('add.html')
+            }
+        }
+    </script>
+</body>
+</html>

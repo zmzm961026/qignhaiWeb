@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>后台管理中心—课程上传</title>
+    <link rel="stylesheet" href="css/pintuer.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="js/jquery.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+</head>
+<body>
+<div class="header bg-main">
+    <div class="logo margin-big-left fadein-top">
+        <h1 style="margin-top:0;"><img src="images/y.jpg" class="radius-circle rotate-hover" height="50" alt="" />后台管理中心</h1>
+    </div>
+    <div class="head-l"><a class="button button-little bg-green" href="index.html" target="_blank"><span class="icon-home"></span> 前台首页</a> &nbsp;&nbsp;<a href="##" class="button button-little bg-blue"><span class="icon-wrench"></span> 清除缓存</a> &nbsp;&nbsp;<a class="button button-little bg-red" href="login.html"><span class="icon-power-off"></span> 退出登录</a> </div>
+</div>
+<div class="leftnav">
+    <div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div>
+    <h2><span class="icon-pencil-square-o"></span>栏目管理</h2>
+        <ul style="display:block" id="list">
+            <li><a href="user.html" target="right"><span class="icon-caret-right"></span>用户审核</a></li>
+            <li><a href="add.html" class="hover" target="right"><span class="icon-caret-right"></span>课程上传</a></li>
+            <li><a href="notice.html" target="right"><span class="icon-caret-right"></span>添加通知</a></li>
+            <li><a href="notice_list.html" target="right"><span class="icon-caret-right"></span>删除通知</a></li>	
+            <li><a href="news.html" target="right"><span class="icon-caret-right"></span>添加新闻</a></li>
+            <li><a href="news_list.html" target="right"><span class="icon-caret-right"></span>删除新闻</a></li>
+            <li><a href="cy_add.html" target="right"><span class="icon-caret-right"></span>创意视频资料上传</a></li>
+            <li><a href="gc_add.html" target="right"><span class="icon-caret-right"></span>工程参考资料上传</a></li>
+            <li><a href="cp_add.html" target="right"><span class="icon-caret-right"></span>产品展示资料上传</a></li>
+            <li><a href="sh_video.html" target="right"><span class="icon-caret-right"></span>课程审核</a></li>
+            <li><a href="pl_audit.html" target="right"><span class="icon-caret-right"></span>评论审核</a></li>
+        </ul>  
+    </div>
+<div class="admin">
+<div class="panel admin-panel">
+<div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>课程上传</strong></div>
+    <div class="body-content">
+        <form method="post" class="form-x" action="" id="myform" action="/api/files/iform" enctype="multipart/form-data" >  
+            <div class="form-group">
+                <div class="label">
+                    <label>分类：</label>
+                </div>
+                <div class="field">
+                    <select name="type" id="device" style="height: 30px;">
+                        <option style="display:none">--请选择项目类别--</option>
+                        <option value="太阳能">太阳能</option>
+                        <option value="风能">风能</option>
+                        <option value="生物质能">生物质能</option>
+                    </select>
+                    <div class="tips"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label">
+                    <label>内容：</label>
+                </div>
+                <div class="field">
+                    <label for="exampleInputFile"></label>
+                    <input type="file" id="files" name="files" multiple="">
+                </div>
+            </div>     
+            <div class="clear"></div>
+            <div class="form-group">
+                <div class="label">
+                    <label></label>
+                </div>
+                <div class="field">
+                    <input id="formuploadprogress" class="button bg-main icon-check-square-o submit" type="button" value="提交">
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
+</div>
+<div style="text-align:center;"></div>
+</body>
+</html>
+<script type="text/javascript">
+    var ali=document.getElementById('list').getElementsByTagName('li');
+    if(localStorage.getItem('state')==0){
+        for(var i=0;i<ali.length;i++){
+            ali[i].style.display='none';
+        }
+        ali[1].style.display='block';
+    }
+    if(localStorage.getItem('state')==1){
+        ali[0].style.display='none';
+    }
+    var opt = document.getElementById('device');
+    document.getElementById('formuploadprogress').onclick=function(){
+        var opt_index=opt.selectedIndex ;
+        var lei = opt.options[opt.selectedIndex].value; 
+        if(opt_index==0){
+            alert('请选择项目类别')
+        }else{
+            AjaxuploadfileWithprogress(lei) 
+        }
+    }
+    function AjaxuploadfileWithprogress(lei) {
+        var formdata = new FormData(document.getElementById("myform"));              
+        $.ajax({
+            type: "POST",
+            url: "http://192.168.1.167:325/api/Updpo?sd="+lei,
+            contentType: false,
+            processData: false,
+            data: formdata,
+            success: function (result) {
+                alert("上传成功");
+                $.each(result.resultObject, function (i, filename) {
+                    alert(filename);
+                });
+            },
+            error: function () {
+                alert("上传文件出现错误！");
+            },
+            xhr: function () {
+                var xhr = $.ajaxSettings.xhr();
+                if (onprogress && xhr.upload) {
+                    xhr.upload.addEventListener("progress", onprogress, false);
+                    return xhr;
+                }
+            } 
+        });
+    }
+
+    function onprogress(evt)
+    {
+        var loaded = evt.loaded;                  //已经上传大小 
+        var tot = evt.total;                      //附件总大小 
+        var per = Math.floor(100 * loaded / tot); //百分比  
+        $("#son").html(per + "%");
+        $("#son").css("width", per + "%");
+    }
+    var files;
+    var setFiles = function(element){
+      console.log(element.files)
+      files = element.files[0];
+    }
+    
+</script>

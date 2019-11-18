@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>青海师范大学物电学院-基础课程</title>
+    <link href="css/css.css" rel="stylesheet" />
+    <link href="css/Basic_course.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <!-- <script src="js/js.js"></script> -->
+    <link href="css/toPage.css" rel="stylesheet" />
+    <link href="css/detail_p.css" rel="stylesheet" />
+    <link href="css/font_u4qz1594lnixusor.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="login">
+        <div id="admin" class="login">
+            <button class="close"></button>
+            <div>您未被授权，请联系管理员&nbsp;:010-57524077</div>
+            <div class="user" style="margin-top:0;">
+                <input class="admin" type="text" autocomplete="off" value="" placeholder="请输入账号" />
+            </div>
+            <div class="password">
+                <input class="admin_pass" type="password" autocomplete="off" value="" placeholder="请输入密码" />
+            </div>
+            <div class="login_button">
+                <button id="admin_but">登录</button>
+            </div>
+        </div>
+        <div id="log" class="login">
+            <button class="close"></button>
+            <div class="user">
+                <input class="username" type="text" autocomplete="off" value="" placeholder="请输入用户名" />
+            </div>
+            <div class="password">
+                <input class="password_log" type="password" autocomplete="off" value="" placeholder="请输入密码" />
+            </div>
+            <div class="zhuce">
+                <a id="registe" href="javascript:;">注册</a><label id="forget_pass">忘记密码</label>
+            </div>
+            <div class="login_button">
+                <button id="login_but" type="button">登录</button>
+            </div>
+        </div>
+        <div id="zhuce" class="zhuce_user">
+            <button class="close"></button>
+            <div id="visited" class="teach_visited">
+                <div class="xuehao">
+                    <p>手&nbsp;&nbsp;机&nbsp;&nbsp;号</p>
+                    <input class="sjh" type="text" autocomplete="off" placeholder="请输入手机号" value="" name="phone" />
+                    <b></b>
+                </div>
+                <div class="xuehao">
+                    <p>密<span>码</span></p>
+                    <input id="ipu" type="password" autocomplete="off" placeholder="请输入密码" value="" name="password" />
+                    <b></b>
+                </div>
+                <div class="xuehao">
+                    <p style="letter-spacing:2.2px;">确认密码</p>
+                    <input id="ipu1" type="password" autocomplete="off" placeholder="请再次输入密码" value="" />
+                    <b></b>
+                </div>
+                <div class="xuehao sex">
+                    <p></p>
+                    <label><input name="teach" type="radio" class="tui-checkbox" value="" checked />老师</label>
+                    <label><input name="teach" type="radio" class="tui-checkbox" value="" />学生</label>
+                    <b></b>
+                </div>
+                <div class="xuehao form-group">
+                    <p></p>
+                    <div class="field">
+                        <input type="text" class="input 
+                        "  id="input1" name="code" placeholder="填写下方的验证码" data-validate="required:请填写下方的验证码"/>
+                        <h4 type="button" id="checkCode" class="code" style="width:100px" value="createCode()"></h4>
+                        <span href="#" onClick="createCode()">看不清楚</span>
+                    </div>
+                    <b></b>
+                </div>
+                <script>
+                    
+                </script>
+                <div class="login_button" style="height:70px;">
+                    <button id="but">注册</button>
+                </div>
+                <div class="xuehao">
+                    <p></p>
+                    <span id="zhuce_dl">已有账号？去登录</span>
+                </div>
+            </div>
+        </div>
+        <div id="pass_change" class="pass_change">
+            <button class="close"></button>
+            <h3>重置密码</h3>
+            <div>
+                <div class="xuehao">
+                    <p>用&nbsp;&nbsp;户&nbsp;&nbsp;名</p>
+                    <input class="sjh" type="text" autocomplete="off" placeholder="请输入用户名" value="" name="phone" />
+                    <b></b>
+                </div>
+                <div class="xuehao">
+                    <p>密<span>码</span></p>
+                    <input id="c_ipu" type="password" autocomplete="off" placeholder="请输入密码" value="" />
+                    <b></b>
+                </div>
+                <div class="xuehao">
+                    <p style="letter-spacing:2.2px;">确认密码</p>
+                    <input id="c_ipu1" type="password" autocomplete="off" placeholder="请再次输入密码" value="" />
+                    <b></b>
+                </div>
+                <div class="login_button" style="height:80px;">
+                    <button id="but_tj">提交</button>
+                </div>
+                <div class="xuehao">
+                    <p></p>
+                    <span id="forget_dl">记起了密码？去登录</span>
+                </div>
+                <div class="xuehao">
+                    <p></p>
+                    <span id="forget_zc">无账号？去注册</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="logo">
+        <div class="logo1">
+            <img src="images/logo.png"/>
+            <div>
+                <a id="login_btn">登录</a>   
+                <p href="">|</p> 
+                <a id="pass_btn">注册</a>
+                <a href="http://www.qhnu.edu.cn/" target="_blank" title="">学校首页</a>
+                <p href="">|</p>
+                <a href="https://wlx.qhnu.edu.cn/" target="_blank" title="">学院首页</a>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">新能源资讯</a></li>
+            <li class="hover"><a href="Basic_course.html">基础课程</a></li>
+            <li><a href="Engineer.html">工程参考资料</a></li>
+            <li><a href="Creative.html">创新创意视频</a></li>
+            <li><a href="Entrepreneurship.html">创业展示</a></li>
+            <li><a id="htguanli" href="javascript:;">课程管理</a></li>
+        </ul>
+    </nav>
+    <div class="con">
+        <div class="title">
+            <h4>教学资源</h4>
+            <p>TEACHING&nbsp;PLAN</p>
+        </div>
+        <div id="nav_title" class="nav_title">
+            <a class="hover" data-title="风能">风能资源</a>
+            <a data-title="太阳能">太阳能资源</a>
+            <a data-title="生物质能">生物质能资源</a>
+        </div>
+        <div class="list_title">
+            <h4 id="h_title">风能资源</h4><span></span>
+        </div>
+        <div id="list_tab" class="list_tab">
+            <p id="shipin">视频</p>
+            <p>考题</p>
+            <p>课件</p>
+        </div>
+        <ul id="list"></ul>
+        <div id="page">
+            <button data-val="1" >首页</button>
+            <button data-val="" >上一页</button>
+            <button data-val="2" >下一页</button>
+            <button data-val="end" >尾页</button>
+        </div>
+        <div style="clear:both;"></div>
+        <div id="barcon"></div>
+        <div id="video" class="videos">
+            <div class="video_b" style="margin-top:0">
+                <div class="video_b_in">
+                    <div class="video_ls">
+                        <video class="video-active" id="vids" controls></video>
+                        <div class="title_top">
+                        </div>
+                        <div id="pass">
+                            <img src="images/zt.png" />
+                        </div>
+                    </div>
+                    <div class="video_rs">
+                        <div class="video_rs_t">
+                            <span>教学视频</span>
+                            <div class="btnadd"></div>
+                        </div>
+                        <div id="video_rs_b" class="video_rs_b">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>青海师范大学物电学院</footer>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript">
+        var currentTime;
+        var cTime=0;
+		var vids=document.getElementById('video_active');
+		$(document).ready(function(){
+			$("#vids").on("timeupdate",function(event){
+                onTrackedVideoFrame(this.currentTime, this.duration);
+                currentTime=this.currentTime
+			});
+		});
+		function onTrackedVideoFrame(currentTime, duration){
+			var a=currentTime/duration;
+            var b=(a*100).toFixed(0)+"%";
+            console.log(currentTime)   //播放时间
+            if(currentTime==duration){
+				$("#pro").text("(已完成)");
+			}
+        }
+        document.onvisibilitychange = function () {
+            if (document.visibilityState === 'hidden') {
+                localStorage.setItem("onvisibilitychange", currentTime)
+            }
+        }
+        setInterval(function(){
+            send_num(currentTime)
+        },60000)
+        function send_num(currentTime){
+            var user_name=localStorage.getItem('user_name');
+            var user_pass_word=localStorage.getItem('user_pass_word');
+            var state_id= localStorage.getItem('state_id');
+            var state= Number(localStorage.getItem('state'));        
+            cTime=parseInt(currentTime)
+            if(user_name!=null&&user_pass_word!=null){
+                $.ajax({
+                    url: 'http://192.168.1.167:325/api/Cour/stutime',
+                    type: 'GET',
+                    dataType: 'json',
+                    data: {StCoude:state_id, Status:1, timee:cTime},
+                    success: function (data) {
+                        console.log(data)
+                    }
+                })
+            }
+        }
+	</script>
+    <script src="js/js.js"></script>
+    <script>
+        
+        function tab(id) { return document.getElementById(id) }
+        //课程管理页面跳转
+        tab('htguanli').onclick=function(){
+            if(localStorage.getItem('user_name')==null&&localStorage.getItem('user_pass_word')==null){
+                alert('请先登录');
+                login_btn()
+            }else{
+                window.open('add.html')
+            }
+        }
+
+
+        var aA = tab('nav_title').getElementsByTagName('a');
+        var aP = tab('list_tab').getElementsByTagName('p');
+        var html = aA[0].getAttribute('data-title');
+        var aInput = tab('page').getElementsByTagName('button');
+        var obj = {};
+        var html1 = '';
+        var html2 = '';
+        var num = 0;
+        var page = 1;
+        var page_num;
+        var type=aP[2].innerHTML;
+        aA[0].className = 'hover';
+        var vids = document.getElementById("vids");
+        tab_change(html,type,page)
+        for (var i = 0; i < aA.length; i++) {
+            aA[i].index = i;
+            aA[i].onclick = function () {
+                page = 1;
+                html = aA[this.index].getAttribute('data-title');
+                html1 = '';
+                tab('h_title').innerHTML = html+'资源';
+                for (var i = 0; i < aA.length; i++) {
+                    aA[i].className = '';
+                }
+                if (vids.play)  {
+                    vids.pause()
+                }
+                for (var i = 0; i < aP.length; i++) {
+                    aP[i].className = '';
+                }
+                aP[2].className = 'hover';
+                aA[this.index].className = 'hover';
+                tab_change(html,"课件",page)
+            }
+        }
+        //页面加载时默认选中课件
+        aP[2].className = 'hover';
+        function tab_change(html,type,page) {
+            $.ajax({
+                url: 'http://192.168.1.167:325/api/Cour/Display',
+                type: 'get',
+                dataType: 'json',
+                data: { res: html, type: type, page: page},
+                success: function (data) {
+                    var index1 = Object.keys(data)[0];
+                    if(type=='课件'){
+                        page_num = data.总页数;
+                        var li_html='';
+                        $.each(data[index1], function (index, value) {
+                            // console.log(index+value.name)
+                            li_html+='<li><a target="_blank" href="' + value.url + '\/' + value.name + '.pdf">'+value.name+'</a></li>';
+                        })
+                        list.className = '';
+                        list.innerHTML = li_html;
+                        tab('list').style.display='block';
+                        tab('page').style.display='block';
+                        tab('video').style.display='none';
+                    }
+                    console.log(data);
+                    var video_rs_b = document.getElementById('video_rs_b');
+                    if(type=='视频'){
+                        var video_html='';
+                        tab('list').style.display='none';
+                        tab('page').style.display='none';
+                        tab('video').style.display='block';
+                        $.each(data[index1], function (index, value) {
+                            // console.log(index+value.name)
+                            video_html += '<div class="one_tb" vid_src="' + value.url+ '\/'+value.name + '.mp4"><span class="one_tb_l"></span ><div class="one_tb_r"><h3 id="h3">' + value.name + '</h3></div></div>';
+                        })
+                        video_rs_b.innerHTML = video_html;
+                        video_play();
+                    }
+                }
+            })
+            fy_click()
+        }
+        for (var i = 0; i < aP.length; i++) {
+            aP[i].index = i;
+            aP[i].onclick = function () {
+                for (var i = 0; i < aP.length; i++) {
+                    aP[i].className = '';
+                }
+                aP[this.index].className = 'hover';
+                html1 = '';
+                type=aP[this.index].innerHTML
+                tab_change(html,type,page) 
+                if (vids.play)  {
+                    vids.pause()
+                }
+            }
+        }
+        
+        function fy_click(){
+            for(var i=0;i<aInput.length;i++){
+                aInput[i].style.background='#0b6cb8';
+            }
+            if(Number(page_num)==1){
+                aInput[1].style.background='#ccc'
+                aInput[2].style.background='#ccc'
+            }else if(Number(page_num)==page){
+                aInput[0].style.background='#0b6cb8'
+                aInput[1].style.background='#0b6cb8'
+                aInput[2].style.background='#ccc'
+            }else if(page==1){
+                aInput[1].style.background='#ccc'
+                aInput[2].style.background='#0b6cb8'
+            }
+            for (var i = 0; i < aInput.length; i++) {
+                aInput[i].index = i;
+                aInput[i].onclick = function () {
+                    if (this.index == 0) {
+                        page = 1;
+                    }
+                    if (this.index == 1) {
+                        if(page==1){
+                            aInput[1].onclick = "return false;";
+                        }else{
+                            aInput[2].style.background='#40ccff'
+                            aInput[1].style.background='#40ccff'
+                            page--;
+                        }
+                    }
+                    if (this.index == 2) {
+                        if(page==Number(page_num)){
+                            
+                            aInput[2].onclick = "return false;";
+                        }else{
+                            aInput[1].style.background='#40ccff'
+                            page++;
+                            aInput[2].style.background='#40ccff'
+                        }
+                    }
+                    if (this.index == 3) {
+                        page = Number(page_num);
+                    }
+                    tab_change(html,type,page);
+                    
+                }
+            }
+        }
+        function video_play(){
+            document.oncontextmenu = function () {
+                event.returnValue = false;
+            }
+            var csdz =$(".one_tb").eq(0).attr("vid_src");
+            var hName = '';
+            /*获取控制对象*/
+            
+            var sskd = $(".controls").width();/*替换原来的764*/
+            /*一开始默认的视频路径（每个页面都会有一个默认的视频吧）*/
+            /*这一步判断他是什么浏览器，调用不同的格式的视频（这里以mp4为例子）*/
+            /*点击右边的话替换左边视频的地址链接以及替换播放器的名字*/
+            $(".one_tb").click(function () {
+                $(this).addClass("on").siblings(".one_tb").removeClass("on");
+                hName = $(this).find("h3").html();
+                var vid_src = $(this).attr("vid_src");
+                // alert(vid_src)
+                $(".title_top").html(hName);
+                vids.src = vid_src;
+                csdz=vid_src
+                vids.play();
+                
+            })
+
+            /*点击暂停图标的时候*/
+            $("#pass").click(function () {
+                $(this).css({ display: "none" });
+                $("#ztbf").attr("class", "iconfont icon-zanting");
+                vids.src = csdz;
+                $(".title_top").html(hName);
+                vids.play();
+            });
+            /*点击控制按钮里面的暂停图标的时候*/
+            $("#ztbf").click(function () {
+                if (vids.paused) {
+                    vids.play()
+                    $("#ztbf").attr("class", "iconfont icon-zanting")
+                } else {
+                    vids.pause()
+                    $("#ztbf").attr("class", "iconfont icon-zanting2")
+                }
+            })
+            /*不论任何途径只要是暂停或者播放*/
+            vids.onplay = function () {
+                $("#pass").css({ display: "none" });
+                $("#ztbf").attr("class", "iconfont icon-zanting");
+            }
+            vids.onpause = function () {
+                $("#pass").css({ display: "block" });
+                $("#ztbf").attr("class", "iconfont icon-zanting2");
+                $("#pBar").on('mouseup', function () {
+                    $(this).off('mousemove')
+                })
+            }
+            /*时间转换器*/
+            function numFormat(time) {
+                time = parseInt(time);
+                var h = addZero(Math.floor(time / 3600));
+                var m = addZero(Math.floor((time % 3600) / 60));
+                var s = addZero(Math.floor(time % 60));
+                return h + ":" + m + ":" + s;
+            }
+            function addZero(num) {
+                if (num < 10) {
+                    return "0" + num;
+                } else {
+                    return '' + num;
+                }
+            }
+            /*当前时间/总的时间(canplay方法开始)*/
+            vids.oncanplay = function () {
+                var aTime = numFormat(vids.duration);
+                $("#aTime").html(aTime);
+                /*第一步,进度条跟着时间动(鼠标点下的时候)*/
+                vids.ontimeupdate = function () {
+                    sskd = $(".controls").width()
+                    var hc = (vids.buffered.end(0) / vids.duration) * sskd;
+                    $("#buff").css({ width: hc + 'px' })
+                    var nTime = numFormat(vids.currentTime);
+                    $("#nTime").html(nTime);
+                    /*当前的时间比上总的时间乘以总的长度*/
+                    var nLengh = (vids.currentTime / vids.duration) * (sskd - 20);
+                    $("#pBar_move").css({ width: nLengh + 'px' });
+                }
+                /*第二步,点击时的进度条*/
+                $("#pBar").mousedown(function (e) {
+                    var cLk = e.clientX;/*点击距离(点击在进度条区域)*/
+                    var pJl = $("#pBar").offset().left;/*获取进度条距离左边的距离*/
+                    var mLengh = cLk - pJl;/*移动的距离*/
+                    if (mLengh >= (sskd - 20)) {
+                        mLengh = (sskd - 20)
+                    }
+                    $("#pBar_move").css({ width: mLengh + 'px' });/*改变进度条的距离*/
+                    var cTime1 = mLengh / (sskd - 20) * vids.duration;
+                    vids.currentTime = cTime1;
+                    var cTime2 = numFormat(cTime1);
+                    $("#nTime").html(cTime2);/*改变html的显示时间*/
+                    vids.play();
+                    /*---------------------------------鼠标拖拽的距离---------------------------------------*/
+                    $(document).on('mousemove', function (e) {
+                        vids.pause();
+                        var newLeft = e.clientX - pJl;/*拖拽的距离*/
+                        if (newLeft <= 0) {
+                            newLeft = 0;
+                        }
+                        if (newLeft >= (sskd - 20)) {
+                            newLeft = (sskd - 20)
+                        }
+                        var cTime3 = newLeft / (sskd - 20) * vids.duration;
+                        var cTime4 = numFormat(cTime3);
+                        $("#pBar_move").css({ width: newLeft + 'px' });
+                        vids.currentTime = cTime3;
+                        $("#nTime").html(cTime4);
+                    })/*拖拽结束*/
+                    /*----------------------------------鼠标松开----------------------------------------*/
+                    $("body").on('mouseup', function () {
+                        $(document).off('mousemove');
+                        vids.play();
+                    })/*松开结束*/
+                })/*mousedown方法结束*/
+            }/*(canplay方法结束)*/
+            /*----------------------------------快进快退(点击html的时候)----------------------------------*/
+            function ktui() {
+                vids.currentTime -= 10;
+            }
+            function kjin() {
+                vids.currentTime += 10;
+            }
+            /*----------------------------------快进快退(点击键盘的时候)----------------------------------*/
+            $(document).keydown(function (event) {
+                if (event.keyCode === 37) {
+                    vids.currentTime -= 10;
+                }
+                if (event.keyCode === 39) {
+                    vids.currentTime += 10;
+                }
+                /*----暂停播放(点击键盘空格的时候)----*/
+                if (event.keyCode === 32) {
+                    if (vids.paused) {
+                        vids.play()
+                        $("#ztbf").attr("class", "iconfont icon-zanting")
+                    } else {
+                        vids.pause()
+                        $("#ztbf").attr("class", "iconfont icon-zanting2")
+                    }
+                }
+                /*-----------退出全屏-----------*/
+                if (event.keyCode === 27) {
+                    $(".video_ls").removeClass("on");
+                    $(".controls").css({ width: "764px" })
+                }
+            })
+            /*鼠标双击事件(双击播放器然后全屏)*/
+            $(".video_ls").dblclick(function () {
+                $(".video_ls").addClass("on");
+                var oBox = $("body").width() - 66;
+                $(".controls").css({ width: oBox + 'px' })
+            });
+            /*全屏播放按钮*/
+            $("#qp").click(function () {
+                if ($(".video_ls").hasClass("on")) {
+                    $(".video_ls").removeClass("on");
+                    $(".controls").css({ width: "764px" })
+                } else {
+                    $(".video_ls").addClass("on");
+                    var oBox = $("body").width() - 66;
+                    $(".controls").css({ width: oBox + 'px' })
+                }
+            })
+            /*收藏*/
+            $("#like").click(function () {
+                if ($(this).hasClass("on")) {
+                    $(this).removeClass("on")
+                } else {
+                    $(this).addClass("on")
+                }
+            })
+            /*点赞*/
+            $("#zan").click(function () {
+                if ($(this).hasClass("on")) {
+                    $(this).removeClass("on")
+                } else {
+                    $(this).addClass("on")
+                }
+            })
+            // /*音量加减*/
+            // vBtn.onmousedown = function (ev) {
+            //     var ev = ev || window.event;
+            //     var xs = ev.clientX - this.offsetLeft;
+            //     document.onmousemove = function (ev) {
+            //         var newLefts = ev.clientX - xs;
+            //         if (newLefts <= 0) {
+            //             newLefts = 0;
+            //         } else if (newLefts >= vBar.offsetWidth - vBtn.offsetWidth) {
+            //             newLefts = vBar.offsetWidth - vBtn.offsetWidth;
+            //         }
+            //         vBtn.style.left = newLefts + "px";
+            //         vBar_in.style.width = (newLefts + 8) + "px";
+            //         var prop = newLefts / (vBar.offsetWidth - vBtn.offsetWidth);
+            //         vids.volume = prop;
+            //         //静音改变音量图标
+            //         if (!vids.volume) {
+            //             icon.style.backgroundImage = "url(images/iconb.png)"
+            //         } else {
+            //             icon.style.backgroundImage = "url(images/icona.png)"
+            //         }
+            //     }
+            //     document.onmouseup = function () {
+            //         document.onmousemove = null;
+            //         document.onmouseup = null;
+            //     }
+            // }
+        }
+    </script>
+</body>
+</html>

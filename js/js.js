@@ -101,7 +101,6 @@ $('#but').click(function () {
         }
     }
     var weekArray = []    
-    console.log(getcode+":"+code)
     if (pass1 === pass2 && pass1.length >= 6 && pass1.length <= 16 && getcode == code) {
         $.ajax({
             url: 'http://192.168.1.167:325/api/Cour/Register',
@@ -109,7 +108,6 @@ $('#but').click(function () {
             dataType: 'json',
             data: {Pass: pass1, User:phone},
             success: function (data) {
-                console.log(data)
                 if (data == false) {
                     alert('该账户已被注册');
                     tab('login').style.display = 'none';
@@ -117,7 +115,6 @@ $('#but').click(function () {
                 if (data == true) {
                     alert('注册成功，等待审核');
                     weekArray.push(phone)
-                    console.log(weekArray)
                     tab('login').style.display = 'none';
                     localStorage.setItem('s_name', JSON.stringify(weekArray));
                 }
@@ -199,7 +196,6 @@ function loginIn() {
             dataType: 'json',
             data: { Pass: $('.password_log').val(), User: $('.username').val() },
             success: function (data) {
-                console.log(data)
                 if (data == 'false') {
                     alert('用户名不存在或密码错误');
                     return false;

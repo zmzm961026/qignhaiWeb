@@ -1,4 +1,5 @@
-﻿.con{height:auto;width:1034px;margin:0px auto}
+﻿@media screen and (min-width:1054px){
+    .con{height:auto;width:1034px;margin:0px auto;margin-bottom: 111px}
 li{font-size: 14px;}
 .con>h3{    font-weight: normal;
     float:left;width:100%;height:120px;line-height:120px;font-size:24px}
@@ -26,6 +27,7 @@ li{font-size: 14px;}
 .list>ol li{float:left;width:75px;color:#ffffff;text-align:center;font-size: 14px;}
 .list>ol li:hover{background:rgba(255,255,255,0.2)}
 .list>ol li.hover{background:rgba(255,255,255,0.2)}
+}
 #barcon{text-align:center;margin:0px auto;box-sizing:border-box}
 .content li{cursor:pointer}
 #page{
@@ -42,3 +44,28 @@ li{font-size: 14px;}
     cursor: pointer;
     color:#fff;
 }
+@media screen and (max-width:1054px){
+    li{font-size: 14px;}
+    .con{height:auto;width:98%;margin:0px auto;margin-bottom: 110px;}
+    .con>h3{float:left;width:100%;height:120px;line-height:120px;font-size:24px}
+    .content{float:left;height:800px;width:100%;margin-bottom:100px;background-image:url('../images/2.png');background-size:100% 100%;position:relative}
+    .content>ul{height:80px;line-height:90px;margin:19px 0 0 12px}
+    .content>ul li{width:22%;height:80px;float:left;line-height:90px;font-size:16px;text-align:center;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+    .list{width:100%;height:550px;border-bottom-left-radius:50px;border-bottom-right-radius:50px}
+    .list>ul{height:65px;margin:0 auto;display:flex;text-align:center}
+    .list>ul li{width:150px;float:left;line-height:38px;height:38px;margin:26px 0px 0}
+    .list>ul li:nth-child(2){width:112px;}
+    .list>ul li:hover,.list>ul li.hover{border-radius:19px;background:url('../images/lll.png') repeat-x;color:#ffffff}
+    .list > div.lll{width:100%;height:auto;position:relative}
+    .list>div>span{display:block;position:absolute;left:30px;top:0px;height:100%;background:#0b6cb8;width:12px;border-radius:6px}
+    .list>div ol{width:95%;height:auto;padding-left:60px}
+    .list>div ol li{display:block;height:40px;line-height:40px;margin:8px 0;text-indent:20px}
+    .list > div ol li a{color:#282828;display:block}
+    .list>div ol li:hover,.list>div ol li:hover a{background:#f0f0f0;color:#2e9dff!important;font-size:16px;height:40px;line-height:40px;margin:8px 0}
+    .list>ol{width:100%;height:38px;background:url('../images/lll.png') repeat-x;line-height:38px;padding:0 21px;border-radius:19px;margin:0px auto}
+    .list>ol li{float:left;width:67px;color:#ffffff;text-align:center}
+    .list>ol li:hover{background:rgba(255,255,255,0.2)}
+    .list>ol li.hover{background:rgba(255,255,255,0.2)}
+    #barcon{text-align:center;margin:0px auto;box-sizing:border-box}
+    .content li{cursor:pointer}
+    }

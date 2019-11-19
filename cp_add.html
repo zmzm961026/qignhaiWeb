@@ -18,7 +18,10 @@
     <div class="logo margin-big-left fadein-top">
         <h1 style="margin-top:0;"><img src="images/y.jpg" class="radius-circle rotate-hover" height="50" alt="" />后台管理中心</h1>
     </div>
-    <div class="head-l"><a class="button button-little bg-green" href="index.html" target="_blank"><span class="icon-home"></span> 前台首页</a> &nbsp;&nbsp;<a href="##" class="button button-little bg-blue"><span class="icon-wrench"></span> 清除缓存</a> &nbsp;&nbsp;<a class="button button-little bg-red" href="login.html"><span class="icon-power-off"></span> 退出登录</a> </div>
+    <div class="head-l">
+        <a class="button button-little bg-green" href="index.html" target="_blank"><span class="icon-home"></span> 前台首页</a>
+        <a style="color:#fff;margin-left:20px" id="username"></a>
+    </div>
 </div>
 <div class="leftnav">
         <div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div>
@@ -80,8 +83,6 @@
 </div>
 <div style="text-align:center;">
 </div>
-</body>
-</html>
 <script type="text/javascript">
     var ali=document.getElementById('list').getElementsByTagName('li');
     if(localStorage.getItem('state')==0){
@@ -93,15 +94,19 @@
     if(localStorage.getItem('state')==1){
         ali[0].style.display='none';
     }
+    document.getElementById('username').innerHTML='当前登录用户：'+localStorage.getItem('user_name')
     var opt = document.getElementById('device');
-    document.getElementById('formuploadprogress').onclick=function(){
+    document.getElementById('formuploadprogress').onclick=sc_add;
+    function sc_add(){
         var opt_index=opt.selectedIndex ;
         var lei = opt.options[opt.selectedIndex].value; 
-        alert(lei)
         if(opt_index==0){
             alert('请选择项目类别')
         }else{
             AjaxuploadfileWithprogress(lei) 
+            document.getElementById('formuploadprogress').onclick="return false";
+            document.getElementById('formuploadprogress').style.background="#ccc"
+            document.getElementById('formuploadprogress').style.borderColor="#ccc"
         }
     }
     function AjaxuploadfileWithprogress(lei) {
@@ -114,9 +119,9 @@
             data: formdata,
             success: function (result) {
                 alert("上传成功");
-                $.each(result.resultObject, function (i, filename) {
-                    alert(filename);
-                });
+                document.getElementById('formuploadprogress').onclick=sc_add;
+                document.getElementById('formuploadprogress').style.background="#0ae"
+                document.getElementById('formuploadprogress').style.borderColor="#0ae"
             },
             error: function () {
                 alert("上传文件出现错误！");
@@ -130,19 +135,6 @@
             } 
         });
     }
-
-    function onprogress(evt)
-    {
-        var loaded = evt.loaded;                  //已经上传大小 
-        var tot = evt.total;                      //附件总大小 
-        var per = Math.floor(100 * loaded / tot); //百分比  
-        $("#son").html(per + "%");
-        $("#son").css("width", per + "%");
-    }
-    var files;
-    var setFiles = function(element){
-      console.log(element.files)
-      files = element.files[0];
-    }
-    
 </script>
+</body>
+</html>

@@ -14,18 +14,18 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
 </head>
 <body>
-<div class="header bg-main">
-  <div class="logo margin-big-left fadein-top">
-    <h1><img src="images/y.jpg" class="radius-circle rotate-hover" height="50" alt="" />后台管理中心</h1>
-  </div>
-  <div class="head-l">
-        <a class="button button-little bg-green" href="index.html" target="_blank"><span class="icon-home"></span> 前台首页</a>
-        <a style="color:#fff;margin-left:20px" id="username"></a>
+	<div class="header bg-main">
+		<div class="logo margin-big-left fadein-top">
+			<h1><img src="images/y.jpg" class="radius-circle rotate-hover" height="50" alt="" />后台管理中心</h1>
+		</div>
+		<div class="head-l">
+			<a class="button button-little bg-green" href="index.html" target="_blank"><span class="icon-home"></span> 前台首页</a>
+			<a style="color:#fff;margin-left:20px" id="username"></a>
+		</div>
 	</div>
-</div>
-<div class="leftnav">
-	<div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div>
-	<h2><span class="icon-pencil-square-o"></span>栏目管理</h2>
+	<div class="leftnav">
+		<div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div>
+		<h2><span class="icon-pencil-square-o"></span>栏目管理</h2>
 		<ul style="display:block" id="list">
 			<li><a href="user.html" target="right"><span class="icon-caret-right"></span>用户审核</a></li>
 			<li><a href="add.html" target="right"><span class="icon-caret-right"></span>课程上传</a></li>
@@ -40,101 +40,97 @@
 			<li><a href="pl_audit.html" target="right"><span class="icon-caret-right"></span>评论审核</a></li>
 		</ul>  
 	</div>
-<div class="admin">
-    <form method="post" action="" id="listform">
-	  <div class="panel admin-panel">
-	    <div class="panel-head"><strong class="icon-reorder">通知列表</strong> <a href="" style="float:right; display:none;">添加字段</a></div>
-	    <div class="padding border-bottom">
-	      <ul class="search" style="padding-left:10px;">
-	        <li><a class="button border-main icon-plus-square-o" href="notice.html"> 添加内容</a></li>
-	      </ul>
-	    </div>
-	    <table class="table table-hover text-center" id="table">
-	      <tr>
-	        <th style="width:50px;text-align: center;padding-left:20px;margin-right:10px;">ID</th>
-	        <th style="width:150px;text-align: center;margin-right:10px;">标题</th>
-	        <th style="width:125px;text-align: center;margin-right:10px;">更新时间</th>
-	        <th style="width:130px;text-align: center;">操作</th>
-	      </tr>
-	    </table>
-		<volist name="list" id="vo"></volist>
-		<table class="table table-hover text-center">
-	      <tr>
-	        <td colspan="8"><div id="pagecount" class="pagelist"></td>
-	      </tr>
-		</table>
-	  </div>
-	</form>
-</div>
-<div style="text-align:center;">
-</div>
-
-<script type="text/javascript">
-	var ali=document.getElementById('list').getElementsByTagName('li');
-    document.getElementById('username').innerHTML='当前登录用户：'+localStorage.getItem('user_name')
-    if(localStorage.getItem('state')==0){
-        for(var i=0;i<ali.length;i++){
-            ali[i].style.display='none';
-        }
-        ali[1].style.display='block';
-    }
-    if(localStorage.getItem('state')==1){
-        ali[0].style.display='none';
-    }
-	sj_load()
-	function sj_load(){
-		$.ajax({
-			url:"http://192.168.1.167:325/api/Cour/Tongzhi",
-			type: "GET",
-			dataType:"json",
-			success:function(data){
-				var th_html='';
-				var html='';
-				var notice_index = Object.keys(data)[0];
-				
-				$.each(data[notice_index],function(index,value){
-					var date='';
-					if(value.redate==null){
-						date=null;
-					}else{
-						date=value.redate.substring(0,10);
-					}
-					th_html='<tr> <th style="width:50px;text-align: center;padding-left:20px;margin-right:10px;">ID</th> <th style="width:150px;text-align: center;margin-right:10px;">标题</th> <th style="width:125px;text-align: center;margin-right:10px;">更新时间</th> <th style="width:130px;text-align: center;">操作</th> </tr>';
-					html+='<tr><td style="text-align:center; padding-left:20px;margin-right:10px;">'+Number(Number(index)+1)+'</td><td style="width:450px;text-align: center;margin-right:10px;">'+value.title+'</td><td style="width:125px;text-align: center;">'+value.conDate+'</td><td><div class="button-group"><a data_id="'+value.id+'" class="button border-red del" href="javascript:void(0)"><span class="icon-trash-o"></span> 删除</a> </div></td> </tr>';
-					//  <a class="button border-main" href="edit.html?id='+value.id+'"><span class="icon-edit"></span>修改</a>
-				})
-				document.getElementById('table').innerHTML=th_html+html;
-				tj_button()
+	<div class="admin">
+		<form method="post" action="" id="listform">
+			<div class="panel admin-panel">
+				<div class="panel-head"><strong class="icon-reorder">通知列表</strong> <a href="" style="float:right; display:none;">添加字段</a></div>
+					<div class="padding border-bottom">
+					<ul class="search" style="padding-left:10px;">
+						<li><a class="button border-main icon-plus-square-o" href="notice.html"> 添加内容</a></li>
+					</ul>	
+				</div>
+				<table class="table table-hover text-center" id="table">
+					<tr>
+						<th style="width:50px;text-align: center;padding-left:20px;margin-right:10px;">ID</th>
+						<th style="width:150px;text-align: center;margin-right:10px;">标题</th>
+						<th style="width:125px;text-align: center;margin-right:10px;">更新时间</th>
+						<th style="width:130px;text-align: center;">操作</th>
+					</tr>	
+				</table>
+				<volist name="list" id="vo"></volist>
+				<table class="table table-hover text-center">
+					<tr>
+						<td colspan="8"><div id="pagecount" class="pagelist"></td>
+					</tr>
+				</table>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript">
+		var ali=document.getElementById('list').getElementsByTagName('li');
+		document.getElementById('username').innerHTML='当前登录用户：'+localStorage.getItem('user_name')
+		if(localStorage.getItem('state')==0){
+			for(var i=0;i<ali.length;i++){
+				ali[i].style.display='none';
 			}
-		});
-	}
-	function tj_button(){
-		var tj_btn=document.getElementsByClassName('del');
-		for(var i=0;i<tj_btn.length;i++){
-			tj_btn[i].index=i;
-			tj_btn[i].onclick=function(){   
-				for(var i=0;i<tj_btn.length;i++){
-					tj_btn[i].onclick="return false";
-				}             
-				var id=Number(tj_btn[this.index].getAttribute('data_id'));
-				$.ajax({
-					url: 'http://192.168.1.167:325/api/Cour/deletecou?id='+id,
-					type: "GET",
-					dataType: "json",
-					contentType: "application/json",
-					success: function (data) {
-						if(data==true){
-							alert('删除成功');
-							sj_load()
-						}
-					},
-					error:function(){
-						window.location.reload();
-					}
-				})
-			}
+			ali[1].style.display='block';
 		}
-	}  
-</script>
+		if(localStorage.getItem('state')==1){
+			ali[0].style.display='none';
+		}
+		sj_load()
+		function sj_load(){
+			$.ajax({
+				url:"http://192.168.1.167:325/api/Cour/Tongzhi",
+				type: "GET",
+				dataType:"json",
+				success:function(data){
+					var th_html='';
+					var html='';
+					var notice_index = Object.keys(data)[0];
+					$.each(data[notice_index],function(index,value){
+						var date='';
+						if(value.redate==null){
+							date=null;
+						}else{
+							date=value.redate.substring(0,10);
+						}
+						th_html='<tr> <th style="width:50px;text-align: center;padding-left:20px;margin-right:10px;">ID</th> <th style="width:150px;text-align: center;margin-right:10px;">标题</th> <th style="width:125px;text-align: center;margin-right:10px;">更新时间</th> <th style="width:130px;text-align: center;">操作</th> </tr>';
+						html+='<tr><td style="text-align:center; padding-left:20px;margin-right:10px;">'+Number(Number(index)+1)+'</td><td style="width:450px;text-align: center;margin-right:10px;">'+value.title+'</td><td style="width:125px;text-align: center;">'+value.conDate+'</td><td><div class="button-group"><a data_id="'+value.id+'" class="button border-red del" href="javascript:void(0)"><span class="icon-trash-o"></span> 删除</a> </div></td> </tr>';
+						//  <a class="button border-main" href="edit.html?id='+value.id+'"><span class="icon-edit"></span>修改</a>
+					})
+					document.getElementById('table').innerHTML=th_html+html;
+					tj_button()
+				}
+			});
+		}
+		function tj_button(){
+			var tj_btn=document.getElementsByClassName('del');
+			for(var i=0;i<tj_btn.length;i++){
+				tj_btn[i].index=i;
+				tj_btn[i].onclick=function(){   
+					for(var i=0;i<tj_btn.length;i++){
+						tj_btn[i].onclick="return false";
+					}             
+					var id=Number(tj_btn[this.index].getAttribute('data_id'));
+					$.ajax({
+						url: 'http://192.168.1.167:325/api/Cour/deletecou?id='+id,
+						type: "GET",
+						dataType: "json",
+						contentType: "application/json",
+						success: function (data) {
+							if(data==true){
+								alert('删除成功');
+								sj_load()
+							}
+						},
+						error:function(){
+							window.location.reload();
+						}
+					})
+				}
+			}
+		}  
+	</script>
 </body>
 </html>
